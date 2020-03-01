@@ -56,14 +56,14 @@ func GetTime() string {
 	hour := now.Hour()     //小时
 	minute := now.Minute() //分钟
 	second := now.Second() //秒
-	return fmt.Sprintf("%d年%02d月%02d日%02d点%02d分%02d秒\n", year, month, day, hour, minute, second)
+	return fmt.Sprintf("%d年%02d月%02d日%02d点%02d分%02d秒", year, month, day, hour, minute, second)
 }
 func GetDate() string {
 	now := time.Now()    //获取当前时间
 	year := now.Year()   //年
 	month := now.Month() //月
 	day := now.Day()     //日
-	return fmt.Sprintf("%d年%02d月%02d日\n", year, month, day)
+	return fmt.Sprintf("%d年%02d月%02d日", year, month, day)
 }
 
 //UserInfo 是用户信息。首字母记得大写，害
@@ -86,7 +86,7 @@ func GenerateHTML(name string, uid string, mail string) {
 func main() {
 
 	address := "xxxxxxxxxxxx@163.com"
-	GenerateHTML("律政先锋张益达", "00000666", address)
+	GenerateHTML("律政先锋张益达", "00000666", address) //替换模板
 
 	err := SendRegisterEmail(address, "register.html")
 
