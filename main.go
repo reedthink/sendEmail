@@ -48,6 +48,8 @@ func SendRegisterEmail(address string, body string) error {
 	err = d.DialAndSend(m)
 	return err
 }
+
+//GetTime is for getting time.OK,it likes that a nonsense.
 func GetTime() string {
 	now := time.Now()      //获取当前时间
 	year := now.Year()     //年
@@ -58,6 +60,8 @@ func GetTime() string {
 	second := now.Second() //秒
 	return fmt.Sprintf("%d年%02d月%02d日%02d点%02d分%02d秒", year, month, day, hour, minute, second)
 }
+
+//GetDate is for getting date.OK,it likes that a nonsense.
 func GetDate() string {
 	now := time.Now()    //获取当前时间
 	year := now.Year()   //年
@@ -75,6 +79,7 @@ type UserInfo struct {
 	Date    string
 }
 
+//GenerateHTML 是模板替换
 func GenerateHTML(name string, uid string, mail string) {
 	U := UserInfo{name, uid, mail, GetTime(), GetDate()}
 	tmpl, _ := template.ParseFiles("registerTmpl.html") //读取模板
